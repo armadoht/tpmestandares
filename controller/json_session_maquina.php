@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['idMaquina'])){
-   $con = new mysqli('localhost','root','tic2020!','grupak_hgo');
+   $con = new mysqli('localhost','root','T1C2017!','grupak_hgo');
    if($con){
        $query = "SELECT maquinaseccion.idMaquinaSeccion,maquinaseccion.nombre "
                . "FROM `maquinaseccion` INNER JOIN maquina ON maquina.idMaquina = maquinaseccion.idMaquina "

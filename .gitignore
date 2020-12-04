@@ -1,1 +1,5 @@
 view/docs/estandar/*
+config/database.php
+controller/json_numeroEmpleado.php
+controller/json_session_maquina.php
+

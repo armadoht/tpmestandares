@@ -116,7 +116,7 @@ function getAllInerJoin(){
     }
 /*Opcion de Tipo de Estandar*/
     function getTipoEstandar(){
-        $query = "SELECT * FROM `tipoEstandar`";
+        $query = "SELECT * FROM `tipoestandar`";
         $result = $this->db()->query($query);
         if($result->num_rows > 0){
             while($row = $result->fetch_array()){

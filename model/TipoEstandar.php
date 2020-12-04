@@ -6,13 +6,13 @@ class TipoEstandar extends EntidadBase{
     private $estatus;
 
     public function TipoEstandar() {
-        $table = "tipoEstandar";
+        $table = "tipoestandar";
         parent ::EntidadBase($table);
     }
 
     /*Insertar Pilar*/
     public function insert() {
-        $query = "INSERT INTO `tipoEstandar` (`idTipoEstandar`, `nombre`, `codigo`, `estatus`) VALUES (NULL, '$this->nombre','$this->codigo', '1')";
+        $query = "INSERT INTO `tipoestandar` (`idTipoEstandar`, `nombre`, `codigo`, `estatus`) VALUES (NULL, '$this->nombre','$this->codigo', '1')";
         $save = $this->db()->query($query);
         return $save;
     }
