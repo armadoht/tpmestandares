@@ -39,7 +39,7 @@ class TipoEstandarController extends ControladorBase {
     }
 
     public function updateTipoEstandar(){
-         $string = "UPDATE `tipoestandar` SET `estatus` = '".$_GET['valor']."' WHERE `tipoEstandar`.`idTipoEstandar` = ".$_GET['idTipoEstandar']."";
+         $string = "UPDATE `tipoestandar` SET `estatus` = '".$_GET['valor']."' WHERE `tipoestandar`.`idTipoEstandar` = ".$_GET['idTipoEstandar']."";
          $TipoEstandar = new TipoEstandar();
          $TipoEstandar->updateById($string);
          $this->redirect("tipoEstandar", "index");
