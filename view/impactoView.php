@@ -1,3 +1,8 @@
+<?php
+    if(!isset($_SESSION['usuario'])){
+         header("Location:index.php?controller=index&action=index");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
