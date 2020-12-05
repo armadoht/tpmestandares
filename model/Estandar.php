@@ -62,6 +62,12 @@ function getAllInerJoin(){
         return $save; 
     }
 
+/**Eliminar Estandar */
+    function update($valor){
+        $query = "UPDATE `estandar` SET `estatus` = '0' WHERE `estandar`.`idEstandar` = $valor;";
+        return $save = $this->db()->query($query);
+    }
+
   
 /*Revison Actual*/
     function getRevision(){

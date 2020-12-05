@@ -73,20 +73,25 @@
                             <th scope="col">Maquina</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Ver Archivo...</th>
+                            <th scope="col">Eliminar</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         if (is_array($datos)) {
                             $cont = 1;
+                           
                             foreach ($datos as $valor) {
+                                $idEstandar = $valor[0];
                                 echo "<tr>";
-                                echo "<th>" . strtoupper($valor[0]) . "</th>";
+                                echo "<th>" . $cont . "</th>";
                                 echo "<th>" . strtoupper($valor[1]) . "</th>";
                                 echo "<th>" . strtoupper($valor[5]) . "</th>";
                                 echo "<th>" . strtoupper($valor[6]) . "</th>";
                                 echo "<th>" . $valor[2] . "</th>";
                                 echo "<th><a href='view/docs/estandar/".$valor[1].".pdf' target='_blank'>Abrir ".$valor[1].".pdf</a></th>";
+                                echo "<th><a class='eliminar' href='#' rel='".$valor[0]."' >Eliminar</a></th>";
                                 echo "</tr>";
                                 $cont++;
                             }
@@ -107,6 +112,27 @@
 /**HERADER DEL PROYECTO */ 
     require_once("footer.php");
 ?>
+
+<!-- Modal para eliminar la lup -->
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Alvertencia!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Estas seguro que quieres eliminar estes estandar !!!!</h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="delet-lup">Eliminar Estandar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Table JS -->
 <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
@@ -114,4 +140,19 @@
       $('#myTable').DataTable();
    } );
 </script>
+
+<script>
+    /**Eliminar Estandar */
+    var NUMCONTROL;
+    $(".eliminar").click(function (){
+        $('#myModal').modal('show');
+            NUMCONTROL = $(this).attr('rel');
+    });
+
+    $("#delet-lup").click(function (){
+        var noControl = $(".eliminar").attr('rel');
+        location.href = 'index.php?controller=Estandar&action=eliminarEstandar&valor='+NUMCONTROL;
+    });
+</script>
+
 </html>

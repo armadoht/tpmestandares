@@ -79,6 +79,12 @@ class EstandarController extends ControladorBase {
         $this->view("mostrarEstandar",array("datos" =>$datos));
     }
 
+    public function eliminarEstandar(){
+        $estandar = new Estandar();
+        $estandar->update($_GET['valor']);
+        $this->redirect('estandar','mostrarEstandar');
+    }
+
 }
 
 ?>
