@@ -16,12 +16,12 @@ class Grafica extends EntidadBase{
 
         $query = "";
         if($this->camposTabla == "*"){
-            echo $query = " SELECT estandar.".$this->idDinamico." FROM `estandar` 
+            $query = " SELECT estandar.".$this->idDinamico." FROM `estandar` 
             INNER JOIN ".$this->tabla." ON estandar.".$this->idDinamico." = ".$this->tabla.".".$this->idDinamico." 
             WHERE estandar.idPlanta =".$this->idPlanta." AND (estandar.fechaElaboro BETWEEN '".$this->fechaInicio."' AND '".$this->fechaFin."')";
 
         }else{
-            echo $query = " SELECT estandar.".$this->idDinamico." FROM `estandar` 
+            $query = " SELECT estandar.".$this->idDinamico." FROM `estandar` 
             INNER JOIN ".$this->tabla." ON estandar.".$this->idDinamico." = ".$this->tabla.".".$this->idDinamico." 
             WHERE estandar.idPlanta =".$this->idPlanta." AND estandar.".$this->idDinamico."=".$this->camposTabla." AND (estandar.fechaElaboro BETWEEN '".$this->fechaInicio."' AND '".$this->fechaFin."')";
         }

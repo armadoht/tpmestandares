@@ -5,7 +5,7 @@ return array(
 	"driver" => "mysql",
 	"host" => "localhost",
 	"user" => "root",
-	"password" => "T1C2017!",
+	"password" => "tic2020!",
 	"database" => "grupak_hgo",
 	"charset" => "UTF8",
 );
