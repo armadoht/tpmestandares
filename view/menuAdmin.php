@@ -52,7 +52,7 @@
                     Graficas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="index.php?controller=Construction&action=index">Grafica por Tiempo</a>
+                <a class="dropdown-item" href="index.php?controller=Grafica&action=tipoEstandar">Grafica Maestra</a>
                 </div>
             </li>
             <!--.\ li -->
