@@ -124,7 +124,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h2>Estas seguro que quieres eliminar estes estandar !!!!</h2>
+                <h2>¿Estas seguro que quieres eliminar este estandar?</h2>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
